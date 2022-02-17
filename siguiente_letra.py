@@ -1,6 +1,5 @@
 import csv
 from pickle import TRUE
-from re import T
 from time import time
 
 listado_de_palabras = []
