@@ -2,5 +2,5 @@ Herramienta para ayudar a adivinar palabras que se van deletreando. Esta pensado
 
 Fichero 0_palabras_todas.txt extraido del trabajo de https://github.com/JorgeDuenasLerin/diccionario-espanol-txt
 
-Las variables de entorno van en un fichero llamado .env que hay que crear con el siguiente contenido:
-run apt install python3.8-venv
+Dependencias del sistema:
+python3.8-venv
