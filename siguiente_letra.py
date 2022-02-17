@@ -10,31 +10,27 @@ def cargar_datos():
     return listado_de_palabras
 
 # TODO: Cuando la salida sean pocas palabras, mostrarlas.
-def busqueda_de_letras(data):
-    x = input('Introduce las letras: ')
-    print()
-    inicio = time()
-    y = len(x)
+def busqueda_de_letras(data, letras):
+    y = len(letras)
     palabras_coincidentes = 0
     candidatas = []
     match = False
     for e in data:
         if len(e) <= y:
             continue
-        elif e.startswith(x):
+        elif e.startswith(letras):
             palabras_coincidentes += 1
             match = True
             if e[y] not in candidatas:
                 candidatas.append(e[y])
-        elif match == True and e.startswith(x) == False:
+        elif match == True and e.startswith(letras) == False:
             break
-    print(f'Palabras coincidentes: {palabras_coincidentes}')
-    print("--- %s seconds ---" % (time() - inicio))
     return candidatas
 
-def main():
-    print (busqueda_de_letras(cargar_datos()))
-
+def main(letras):
+    listado = cargar_datos()
+    return busqueda_de_letras(listado, letras)
 
 if __name__ == "__main__":
+    # TODO repara el funcionamiento metiendo dato por terminal
     main()
