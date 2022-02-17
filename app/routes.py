@@ -10,6 +10,8 @@ from app.forms import palabra_en_formacion
 def index():
     form = palabra_en_formacion()
     if form.validate_on_submit():
-        flash('Has introducido las siguientes letras {}'.format(form.letras.data))
+        letras = form.letras.data
+        letras = letras.lower()
+        flash('Has introducido las siguientes letras {}'.format(letras))
         return redirect('/')
     return render_template('index.html', form=form)
