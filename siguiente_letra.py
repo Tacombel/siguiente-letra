@@ -1,5 +1,4 @@
 import csv
-from pickle import TRUE
 from time import time
 
 def cargar_datos():
