@@ -9,6 +9,7 @@ def cargar_datos():
             listado_de_palabras.append(row[0])
     return listado_de_palabras
 
+# TODO: Cuando la salida sean pocas palabras, mostrarlas.
 def busqueda_de_letras(data):
     x = input('Introduce las letras: ')
     print()
