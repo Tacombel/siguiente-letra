@@ -1,9 +1,11 @@
 <!doctype html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <html>
     <head>
         <title>Siguiente Letra</title>
     </head>
     <body>
+        <h1>Buscando la siguiente letra</h1>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>
@@ -13,7 +15,6 @@
         </ul>
         {% endif %}
         {% endwith %}
-        <h1>Buscando la siguiente letra</h1>
         <form action="" method="post" novalidate>
             {{ form.hidden_tag() }}
             <p>
