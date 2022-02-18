@@ -1,10 +1,12 @@
-<!doctype html>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<html>
-    <head>
-        <title>Siguiente Letra</title>
-    </head>
-    <body>
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    Siguiente Letra
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
         <h1>Buscando la siguiente letra</h1>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -23,5 +25,5 @@
             </p>
             <p>{{ form.submit() }}</p>
         </form>
-    </body>
-</html>
+    </div>
+{% endblock%}
