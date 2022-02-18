@@ -15,7 +15,7 @@ def index():
         letras = form.letras.data
         letras = letras.lower()
         candidatas = siguiente_letra.main(letras)
-        flash('Has introducido las siguientes letras {}'.format(letras))
+        flash('Has introducido las siguientes letras: {}'.format(letras))
         flash('Candidatas para la siguiente letra {}'.format(candidatas))
         return redirect('/')
     return render_template('index.html', form=form)
