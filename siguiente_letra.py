@@ -32,5 +32,6 @@ def main(letras):
     return busqueda_de_letras(listado, letras)
 
 if __name__ == "__main__":
-    # TODO repara el funcionamiento metiendo dato por terminal
-    main()
+    print('Introduce letras: ')
+    x = input()
+    print(main(x))
