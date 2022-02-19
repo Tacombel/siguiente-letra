@@ -34,4 +34,4 @@ def main(letras):
 if __name__ == "__main__":
     print('Introduce letras: ')
     x = input()
-    print(main(x))
+    print(f'Las candidatas para continuar son {main(x)}')
