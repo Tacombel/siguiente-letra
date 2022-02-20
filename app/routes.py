@@ -10,14 +10,23 @@ import siguiente_letra
 def index():
     form = palabra_en_formacion()
     candidatas = []
-    if not session['letras']:
-        session['letras'] = ""
+    if 'letras' in session:
+        letras_old = session['letras']
+    else:
+        letras_old = ''
+        session['letras'] = letras_old
     if form.validate_on_submit():
-        letras = form.letras.data
-        letras = letras.lower()
-        session['letras'] = letras
+        letra = form.letras.data
+        letra = letra.lower()
+        letras = letras_old + letra
         candidatas = siguiente_letra.main(letras)
+        session['letras'] = letras
         session['candidatas'] = candidatas
         flash('Candidatas para la siguiente letra {}'.format(candidatas))
         return redirect(url_for('index'))
     return render_template('index.html', form=form, letras=session['letras'])
+
+@app.route('/reset')
+def reset():
+    session['letras'] = ''
+    return redirect(url_for('index'))
