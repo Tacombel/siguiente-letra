@@ -24,7 +24,6 @@ def busqueda_de_letras(data, letras):
             if e[y] not in candidatas:
                 candidatas.append(e[y])
         elif match == True and e.startswith(letras) == False:
-            print(e)
             break
     return candidatas
 
